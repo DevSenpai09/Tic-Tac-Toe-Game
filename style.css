@@ -1,0 +1,293 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+section {
+  max-width: 500px;
+}
+
+.x_icon {
+  fill: #31c4be;
+  display: none;
+}
+
+.o_icon {
+  fill: #f4b036;
+  display: none;
+}
+
+.neutral {
+  fill: #a8bec9;
+}
+
+.on {
+  display: block;
+}
+
+.off {
+  display: none;
+}
+
+main {
+  background-color: #192a32;
+  height: 100vh;
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+}
+
+main #landing_page {
+  place-self: center;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+}
+
+main #landing_page .pick_mark {
+  background-color: #1f3540;
+  padding: 20px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+}
+
+main #landing_page .pick_mark h2 {
+  color: #a8bec9;
+  font-size: 14px;
+}
+
+main #landing_page .pick_mark .marks_con {
+  background-color: #192a32;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 7px;
+  padding: 7px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+main #landing_page .pick_mark .marks_con #x_mark {
+  border-radius: 7px;
+  background-color: #a8bec9;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+main #landing_page .pick_mark .marks_con #o_mark {
+  border-radius: 7px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+main #landing_page .pick_mark p {
+  color: #a8bec9;
+  opacity: 0.5;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+main #landing_page .game_modes {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 15px;
+  margin-top: 30px;
+}
+
+main #landing_page .game_modes button {
+  color: #192a32;
+  font-weight: 900;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+main #landing_page .game_modes #versusCPU {
+  background-color: #f4b036;
+  -webkit-box-shadow: 0px 5px 0px 0px rgba(244, 176, 54, 0.8);
+          box-shadow: 0px 5px 0px 0px rgba(244, 176, 54, 0.8);
+}
+
+main #landing_page .game_modes #versusPlayer {
+  background-color: #31c4be;
+  -webkit-box-shadow: 0px 5px 0px 0px rgba(49, 196, 190, 0.8);
+          box-shadow: 0px 5px 0px 0px rgba(49, 196, 190, 0.8);
+}
+
+main #game_page {
+  display: none;
+  grid-gap: 20px;
+  place-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+main #game_page header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+main #game_page header .player_turn {
+  background-color: #1f3540;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 7px 20px;
+  border-radius: 7px;
+}
+
+main #game_page header .player_turn p {
+  font-size: 14px;
+  color: #a8bec9;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+main #game_page header .restart {
+  background-color: #a8bec9;
+  color: #192a32;
+  font-size: 15px;
+  padding: 5.5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(168, 190, 201, 0.7);
+          box-shadow: 0 1px 2px 0 rgba(168, 190, 201, 0.7);
+}
+
+main #game_page .game_tiles {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  grid-gap: 15px;
+}
+
+main #game_page .game_tiles .tile {
+  background-color: #1f3540;
+  border-radius: 7px;
+  width: 70px;
+  height: 70px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+main #game_page .score_tiles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main #game_page .score_tiles .score_tile {
+  border-radius: 7px;
+  padding: 7px;
+  width: 70px;
+  color: #192a32;
+}
+
+main #game_page .score_tiles .score_tile h3 {
+  font-size: 11px;
+  font-weight: lighter;
+}
+
+main #game_page .score_tiles .score_tile p {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 1px;
+}
+
+main #game_page #result_con {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+}
+
+main #game_page #result_con .result {
+  width: 100%;
+  background-color: #1f3540;
+  padding: 30px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-gap: 15px;
+}
+
+main #game_page #result_con .result h3 {
+  color: #a8bec9;
+  font-size: 14px;
+}
+
+main #game_page #result_con .result .who_won {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #31c4be;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+}
+
+main #game_page #result_con .result .who_won p {
+  margin-left: 10px;
+}
+
+main #game_page #result_con .result .result_btns button {
+  padding: 10px;
+  border-radius: 7px;
+  font-weight: 900;
+  color: #192a32;
+}
+
+main #game_page #result_con .result .result_btns #quit {
+  background-color: #a8bec9;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(168, 190, 201, 0.7);
+          box-shadow: 0px 3px 0px 0px rgba(168, 190, 201, 0.7);
+}
+
+main #game_page #result_con .result .result_btns #next_round {
+  background-color: #f4b036;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(244, 176, 54, 0.7);
+          box-shadow: 0px 3px 0px 0px rgba(244, 176, 54, 0.7);
+  margin-left: 7px;
+}
+/*# sourceMappingURL=style.css.map */

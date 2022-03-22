@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/4835932d3c.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <main>
+      <!-- LANDING PAGE -->
+      <section id="landing_page">
+        <!-- Header -->
+        <header>
+          <div class="logo">
+            <svg width="25" height="25">
+              <use href="#x_icon" class="x_icon on" />
+            </svg>
+            <svg width="25" height="25">
+              <use href="#o_icon" class="o_icon on" />
+            </svg>
+          </div>
+        </header>
+
+        <!-- Pick Mark -->
+        <div class="pick_mark">
+          <h2>pick player 1's mark</h2>
+          <div class="marks_con">
+            <div id="x_mark" onclick="playerMark('x')">
+              <svg width="30" height="40" fill="#192a32" id="x_mark_icon">
+                <use href="#x_icon" />
+              </svg>
+            </div>
+            <div id="o_mark" onclick="playerMark('o')">
+              <svg width="30" height="40" fill="#a8bec9" id="o_mark_icon">
+                <use href="#o_icon" />
+              </svg>
+            </div>
+          </div>
+          <p>remember: x goes first</p>
+        </div>
+
+        <!-- Game Modes -->
+        <div class="game_modes">
+          <button id="versusCPU" onclick="playerTwoType('cpu')">
+            new game (vs cpu)
+          </button>
+          <button id="versusPlayer" onclick="playerTwoType('secondPlayer')">
+            new game (vs player)
+          </button>
+        </div>
+      </section>
+
+      <!-- GAME PAGE -->
+      <section id="game_page">
+        <!-- Header -->
+        <header>
+          <div class="logo">
+            <svg width="25" height="25">
+              <use href="#x_icon" class="x_icon on" />
+            </svg>
+            <svg width="25" height="25">
+              <use href="#o_icon" class="o_icon on" />
+            </svg>
+          </div>
+
+          <div class="player_turn">
+            <svg width="15" height="15" class="neutral">
+              <use href="#x_icon" class="mark_turn" />
+              <use href="#o_icon" class="mark_turn off" />
+            </svg>
+            <p>turn</p>
+          </div>
+
+          <button class="restart" onclick="restart()">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
+        </header>
+
+        <!-- Game Tiles -->
+        <div class="game_tiles">
+          <div class="tile">
+            <svg width="40" height="40">
+              <use href="#x_icon" class="x_icon x_tile" />
+              <use href="#o_icon" class="o_icon o_tile" />
+            </svg>
+          </div>
+          <div class="tile">
+            <svg width="40" height="40">
+              <use href="#x_icon" class="x_icon x_tile" />
+              <use href="#o_icon" class="o_icon o_tile" />
+            </svg>
+          </div>
+          <div class="tile">
+            <svg width="40" height="40">
+              <use href="#x_icon" class="x_icon x_tile" />
+              <use href="#o_icon" class="o_icon o_tile" />
+            </svg>
+          </div>
+          <div class="tile">
+            <svg width="40" height="40">
+              <use href="#x_icon" class="x_icon x_tile" />
+              <use href="#o_icon" class="o_icon o_tile" />
+            </svg>
+          </div>
+          <div class="tile">
+            <svg width="40" height="40">
+              <use href="#x_icon" class="x_icon x_tile" />
+              <use href="#o_icon" class="o_icon o_tile" />
+            </svg>
+          </div>
+          <div class="tile">
+            <svg width="40" height="40">
+              <use href="#x_icon" class="x_icon x_tile" />
+              <use href="#o_icon" class="o_icon o_tile" />
+            </svg>
+          </div>
+          <div class="tile">
+            <svg width="40" height="40">
+              <use href="#x_icon" class="x_icon x_tile" />
+              <use href="#o_icon" class="o_icon o_tile" />
+            </svg>
+          </div>
+          <div class="tile">
+            <svg width="40" height="40">
+              <use href="#x_icon" class="x_icon x_tile" />
+              <use href="#o_icon" class="o_icon o_tile" />
+            </svg>
+          </div>
+          <div class="tile">
+            <svg width="40" height="40">
+              <use href="#x_icon" class="x_icon x_tile" />
+              <use href="#o_icon" class="o_icon o_tile" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Score Tiles -->
+        <div class="score_tiles">
+          <div class="score_tile" style="background-color: #31c4be">
+            <h3>x (you)</h3>
+            <p class="show_score">0</p>
+          </div>
+          <div class="score_tile" style="background-color: #a8bec9">
+            <h3>ties</h3>
+            <p class="show_score">0</p>
+          </div>
+          <div class="score_tile" style="background-color: #f4b036">
+            <h3>o (cpu)</h3>
+            <p class="show_score">0</p>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div id="result_con">
+          <div class="result">
+            <h3 id="result_heading">you won!</h3>
+            <div class="who_won">
+              <svg width="30" height="30" id="result_icon">
+                <use href="#x_icon" id="x_result" class="x_icon" />
+                <use href="#o_icon" id="o_result" class="o_icon" />
+              </svg>
+              <p id="result_text">takes the round</p>
+            </div>
+            <div class="result_btns">
+              <a href=""><button id="quit">quit</button></a>
+              <button id="next_round" onclick="nextRound()">next round</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SVG COMPONENTS-->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="x_icon" viewBox="0 0 277.07 277.07">
+        <title>x_icon</title>
+        <g id="x_icon__path">
+          <path
+            d="M634.14,267,697,204.15A41.1,41.1,0,0,0,697,146l-5.5-5.5a41.1,41.1,0,0,0-58.14,0L570.5,203.36l-62.85-62.85a41.1,41.1,0,0,0-58.14,0L444,146a41.1,41.1,0,0,0,0,58.14L506.86,267,444,329.85A41.1,41.1,0,0,0,444,388l5.5,5.5a41.1,41.1,0,0,0,58.14,0l62.85-62.85,62.85,62.85a41.1,41.1,0,0,0,58.14,0L697,388a41.1,41.1,0,0,0,0-58.14Z"
+            transform="translate(-431.96 -128.46)"
+          />
+        </g>
+      </symbol>
+
+      <symbol id="o_icon" viewBox="0 0 250 250">
+        <title>o_icon</title>
+        <path
+          id="o_icon__path"
+          d="M565,167A125,125,0,1,0,690,292,125,125,0,0,0,565,167Zm0,175a50,50,0,1,1,50-50A50,50,0,0,1,565,342Z"
+          transform="translate(-440 -167)"
+        />
+      </symbol>
+    </svg>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
